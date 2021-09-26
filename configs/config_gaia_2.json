@@ -1,0 +1,32 @@
+{
+  "seed": 1,
+  "gpu": "0",
+  "task1_classes": 2,
+  "task2_classes": 37,
+  "backbone": "resnet34",
+  "road_weight": 0.8,
+  "angle_weight": 1,
+  "resume_dir": "None",
+  "finetune_dir": "None",
+  "dataset": {
+    "input_size": "(512, 512)",
+    "mean" : "(0.485, 0.456, 0.406)",
+    "std" : "(0.229, 0.224, 0.225)",
+    "data_dir": "/data/users/bh163/data/eccv/patches_mtl_nzaz/patches",
+    "train_file": "/data/users/bh163/data/eccv/patches_mtl_nzaz/file_list_train.txt",
+    "valid_file": "/data/users/bh163/data/eccv/patches_mtl_nzaz/file_list_valid.txt",
+    "batch_size": 5,
+    "workers": 4
+  },
+  "optimizer": {
+    "e_lr": 0.0005,
+    "d_lr": 0.005,
+    "lr_step": 0.1,
+    "lr_drop_epoch": "[60,90,110]"
+  },
+  "trainer": {
+    "total_epochs": 80,
+    "save_epoch": 10,
+    "save_dir": "/data/users/bh163/models/line_mtl_eccv/NZAZ"
+  }
+}
